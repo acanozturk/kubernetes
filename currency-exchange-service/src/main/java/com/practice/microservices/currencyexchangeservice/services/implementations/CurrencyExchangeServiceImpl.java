@@ -39,7 +39,9 @@ public class CurrencyExchangeServiceImpl implements CurrencyExchangeService {
     }
 
     private String getCurrentEnvironment() {
+        final String port = environment.getProperty("local.server.port");
+        final String host = environment.getProperty("HOSTNAME");
 
-        return environment.getProperty("local.server.port");
+        return "Port: " + port + ", Host: " + host;
     }
 }
